@@ -31,18 +31,11 @@ export function PropertyCardComponent({
       onClick={onClick}
       href={`/properties/${id}`}
     >
-      <Image
+      <img
         src={image}
         alt=""
         className="w-full max-h-[280px] rounded object-cover"
-        width={450}
-        height={280}
       />
-      {/* <img
-          src={image}
-          loading="lazy"
-          className="w-full max-h-[280px] rounded object-cover"
-        /> */}
       <div className="flex flex-row items-center gap-1">
         <LocationIcon />
         <h1 className="font-inter text-sm font-normal">{location}</h1>

@@ -1,6 +1,6 @@
 export enum Role {
-  User = 1,
-  Admin = 2,
+  User = "user",
+  Admin = "admin",
 }
 export interface JwtPayload {
   sub: number;

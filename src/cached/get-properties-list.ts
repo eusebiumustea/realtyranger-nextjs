@@ -1,16 +1,16 @@
+"use server";
 import { authentificationRequest } from "@/helpers/request";
 import { PropertyCard } from "@/models";
-import { cache } from "react";
-const cachedFunction = async () => {
+export default async () => {
   try {
     const response = await authentificationRequest<PropertyCard[]>({
       url: "/property",
       method: "GET",
+      fetchOptions: { next: { tags: ["properties"] }, cache: "force-cache" },
     });
-    return response.data;
+    return response?.data || [];
   } catch (error) {
     console.log(error);
     return [];
   }
 };
-export default cache(cachedFunction);

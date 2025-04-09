@@ -25,7 +25,7 @@ export function Header({ user }: { user: JwtPayload }) {
           />
         )}
       </AnimatePresence>
-      <div className="flex bg-white flex-row border-b h-12 items-center justify-between w-full fixed z-10 top-0 left-0 p-2">
+      <header className="flex bg-white flex-row border-b h-12 items-center justify-between w-full fixed z-10 top-0 left-0 p-2">
         <Logo
           theme="dark"
           svg={{
@@ -42,9 +42,15 @@ export function Header({ user }: { user: JwtPayload }) {
           fill="#000"
           className="md:hidden"
         />
-      </div>
+      </header>
       {optionsModal && (
-        <ProfileOptions user={user} onClose={() => setOptionsModal(false)} />
+        <ProfileOptions
+          user={user}
+          onClose={() => {
+            setOptionsModal(false);
+            setMobileMenu(false);
+          }}
+        />
       )}
     </>
   );

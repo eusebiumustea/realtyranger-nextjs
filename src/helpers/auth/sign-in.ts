@@ -1,5 +1,4 @@
 "use server";
-import { redirect } from "next/navigation";
 import { request } from "../request";
 import { setAccessToken } from "./auth";
 
@@ -11,7 +10,6 @@ export const signIn = async (email: string, password: string) => {
       data: { email, password },
     });
     await setAccessToken(response.data.accessToken);
-    redirect("/");
   } catch (error) {
     console.log(error);
   }

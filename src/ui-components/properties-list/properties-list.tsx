@@ -8,7 +8,6 @@ interface GridComponentsProps {
 }
 interface PropertiesListProps {
   data?: PropertyCard[];
-  additionalAction?: () => void;
 }
 const gridComponents = {
   List: forwardRef(
@@ -32,25 +31,13 @@ const gridComponents = {
     )
   ),
 };
-export const PropertiesList = memo(
-  ({ data, additionalAction }: PropertiesListProps) => {
-    return (
-      <VirtuosoGrid
-        useWindowScroll
-        style={{ width: "100%", paddingTop: 16, paddingBottom: 16 }}
-        totalCount={data?.length}
-        data={data}
-        components={gridComponents as GridComponents}
-        itemContent={(i, item) => (
-          <PropertyCardComponent
-            key={i}
-            onClick={() => {
-              additionalAction?.();
-            }}
-            {...item}
-          />
-        )}
-      />
-    );
-  }
-);
+export const PropertiesList = memo(({ data }: PropertiesListProps) => (
+  <VirtuosoGrid
+    useWindowScroll
+    style={{ width: "100%", paddingTop: 16, paddingBottom: 16 }}
+    totalCount={data?.length}
+    data={data}
+    components={gridComponents as GridComponents}
+    itemContent={(i, item) => <PropertyCardComponent key={i} {...item} />}
+  />
+));

@@ -92,7 +92,7 @@ export default function RegisterPage() {
             firstName,
             lastName,
             password,
-          })
+          }).then(() => route.replace("/"))
         )}
         className={`${buttonTheme({ variant: "primary" })}`}
       >

@@ -15,12 +15,10 @@ export default async function AuthentificationLayout({
   }
   return (
     <div className="w-full h-dvh flex justify-center items-center">
-      <Image
-        src={backgroundImage}
+      <img
+        src={backgroundImage.src}
         alt="Landscape of future green city"
-        width={1920}
         className="w-full h-dvh object-cover fixed -z-30 brightness-75"
-        height={1080}
       />
       <div className="w-[90%] flex flex-col p-4 sm:w-auto sm:max-w-[640px] bg-white max-h-[90%] shadow-2xl shadow-slate-300 rounded-xl">
         <Logo theme="dark" svg={{ className: "self-center my-6" }} />

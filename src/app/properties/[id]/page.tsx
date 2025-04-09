@@ -29,7 +29,7 @@ export default async function PropertyPage({
 
   return (
     <div className="pt-12">
-      <BackButton additionalStyle="m-3" />
+      <BackButton className="m-2" />
       <Gallery images={property?.images} />
       <div className="w-full py-4 gap-4 2xl:px-24 flex flex-col justify-center items-start">
         <h1 className="bg-[#EEEEEE] mx-2 py-3 px-6 font-sans text-[#0C4653] uppercase self-start">

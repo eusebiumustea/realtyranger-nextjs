@@ -51,7 +51,9 @@ export default function LoginPage() {
         Don't have an account?
       </button>
       <button
-        onClick={handleSubmit(({ email, password }) => signIn(email, password))}
+        onClick={handleSubmit(({ email, password }) =>
+          signIn(email, password).then(() => route.push("/"))
+        )}
         className={`${buttonTheme({ variant: "primary" })}`}
       >
         Sign In
